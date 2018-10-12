@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get '/dashboard', to: "dashboard#index"
+  root to: "dashboard#index"
 
   namespace :account do
-    resources :projects, only: [:index, :show, :create]
+    resources :projects do
+      resources :tasks, only: :create
+    end
   end
 end

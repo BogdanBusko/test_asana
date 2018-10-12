@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import NewTask from "./Tasks/components/New";
 
-class Project extends Component {
+class Show extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,12 +18,10 @@ class Project extends Component {
     let tasks = this.props.tasks.map(task => {
       return(
         <div key={task.id}>
-          <p>
             <h3>{task.title}</h3>
             <p>
               {task.description}
             </p>
-          </p>
         </div>
       )
     })
@@ -32,14 +31,15 @@ class Project extends Component {
 
   render() {
     return(
-      <div className='project'>
+      <div>
         <h1>{this.state.project.name}</h1>
         <div>
           {this.state.tasks}
         </div>
+        <NewTask base_url={this.props.base_url} project_id={this.props.project.id} auth_token={this.props.auth_token}/>
       </div>
     )
   }
 }
 
-export default Project;
+export default Show;

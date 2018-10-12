@@ -1,7 +1,12 @@
 import ReactOnRails from 'react-on-rails';
 
-import Dashboard from '../bundles/Dashboard/components/Dashboard';
-import Projects from '../bundles/Account/components/Projects';
-import Project from '../bundles/Account/components/Project';
+import Header from '../bundles/Partials/components/Header'
 
-ReactOnRails.register({ Dashboard, Projects, Project, });
+import DashboardIndex from '../bundles/Dashboard/components/Index';
+
+import ProjectsIndex from '../bundles/Account/Projects/components/Index';
+import ProjectsShow  from '../bundles/Account/Projects/components/Show';
+import ProjectsNew   from '../bundles/Account/Projects/components/New';
+import ProjectsEdit  from '../bundles/Account/Projects/components/Edit';
+
+ReactOnRails.register({ Header, DashboardIndex, ProjectsIndex, ProjectsShow, ProjectsNew, ProjectsEdit });

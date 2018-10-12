@@ -1,1 +1,1 @@
-<%= react_component('Project', props: { project: @project, tasks: @tasks }) %>
+<%= react_component 'ProjectsShow', props: { project: @project, tasks: @tasks, base_url: account_projects_url, auth_token: form_authenticity_token } %>
